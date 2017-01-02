@@ -1,17 +1,26 @@
 # React + Typescript + Express web development starter
 
+## Initial setup
+
+Run `npm install` to install all dependencies from the package.json.
+
 ## Run your code
 
 The simplest dev workflow is achieved with two separate processes constantly running:
 * `npm run server-watch` - runs the backend application server, updates as server code is changed
 * `npm run client-watch` - runs a hot-reloading server, updates as client code is changed and auto-reloads the browser
-* Visit `http://localhost:8080/webpack-dev-server`.
+
+Then, visit `http://localhost:8080/webpack-dev-server`.
 
 
 ## Run tests
 All tests (files with `.spec.ts` or `.spec.tsx`) can be run with `npm test`. 
 As currently configured, you can only re-run _all_ tests. If they are very fast and you like to have them constantly going as you make changes, consider using `npm test-watch`.
 
+
+
+
+# More information
 
 ## npm
 
@@ -29,7 +38,7 @@ Npm is used to set up easy access to development scripts - e.g., run tests. Thes
 ### `npm run lint`
 Run tslint against typescript files.
 
-#### Configuration
+##### Configuration
 This simply references the installed package 'tslint' to run linting against all ts or tsx files under the src directory.
 This can be further configured by adding a `tslint.json` file in the project's root directory. More information at https://www.npmjs.com/package/tslint.
 
@@ -37,7 +46,7 @@ This can be further configured by adding a `tslint.json` file in the project's r
 Run tests with Mocha. Any file with a `.spec.ts` or `.spec.tsx` extension is considered to be a test.
 Mocha is set up to run in `--ui tdd` mode (using `suite`, `test`, etc. instead of `describe`, `it`, etc.).
 
-#### Configuration
+##### Configuration
 This script first builds the webpack test bundle, and then uses the Mocha executable to run the `build/test/test.bundle.js` produced by webpack.
 The test config for webpack is set up to bundle in many of the same ways that the client does, except to use `src/test/test_runner.js` as the entry point.
 The `test_runner.js` file is where we've configured which files to bundle into the test bundle, where we say `.spec.ts` or `.spec.tsx`.
@@ -45,7 +54,7 @@ The `test_runner.js` file is where we've configured which files to bundle into t
 ### `npm run test-watch`
 Same as test, but runs through a watcher that will cancel and re-run the mocha process if any of the files needed by the test bundle are changed.
 
-#### Configuration
+##### Configuration
 This is done with a node script in `scripts/test-watch`.
 
 ### `npm run client-watch`
@@ -57,7 +66,7 @@ Runs a webpack dev server for the client bundles. This includes:
 The dev server runs at http://localhost:8080/webpack-dev-server.
 This always serves the `index.html` file from the `build/client` directory. For other server requests, a normal backend server must be running at localhost:3000 (e.g., with `npm run server`.)
 
-#### Configuration
+##### Configuration
 This takes advantage of `webpack-dev-server`, an npm module that does all the work.
 This can actually be configured to a much greater degree than it currently is. For more information, see https://webpack.github.io/docs/webpack-dev-server.html.
 
@@ -65,20 +74,21 @@ This can actually be configured to a much greater degree than it currently is. F
 Run the backend application server at http://localhost:3000.
 Builds the server bundle in `build/server`, then starts a node process and runs that server bundle.
 
-#### Configuration
+##### Configuration
 The server bundle is configured by `webpack/server.js`. Most importantly, its entry point is `src/server/main.ts`, which sets up an express application on port 3000.
 
 ### `npm run server-watch`
 Same as `npm run server`, but through a webpack watcher that rebundles and restarts the server process when server files are changed.
 
-#### Configuration
+##### Configuration
 This is done with a node script in `scripts/server-watch`.
 
-### `npm run build`
-Bundles and starts the server as in `npm run server`, but uses the production build.
-
 ### `npm run build-client`
-Bundles the client files, but uses the production build.
+Bundles the client files in production mode, and outputs to `build/`.
+
+### `npm run build`
+Bundles both the client and server files in production mode, and outputs to `build/`.
+
 
 
 ## webpack
