@@ -1,5 +1,9 @@
 # React + Typescript + Express web development starter
 
+## Initial setup
+
+Run `npm install` to install all dependencies from the package.json.
+
 ## Run your code
 
 The simplest dev workflow is achieved with two separate processes constantly running:
