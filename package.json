@@ -54,7 +54,6 @@
     "@types/websocket": "0.0.32",
     "express": "^4.14.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "websocket": "^1.0.23"
+    "react-dom": "^15.4.1"
   }
 }
