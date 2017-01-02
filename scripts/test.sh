@@ -1,1 +1,1 @@
-./node_modules/.bin/webpack --config webpack/test.js && ./node_modules/.bin/mocha --no-colors build/test/test.bundle.js
+./node_modules/.bin/webpack --config webpack/test.js --progress --colors && ./node_modules/.bin/mocha build/test/test.bundle.js --ui tdd --colors

@@ -1,1 +1,1 @@
-./node_modules/.bin/webpack --config webpack/production.js && ./node_modules/.bin/webpack --config webpack/server.js
+./node_modules/.bin/webpack --config webpack/production.js  --progress --colors && ./node_modules/.bin/webpack --config webpack/server.js --progress --colors

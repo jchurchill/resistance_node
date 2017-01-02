@@ -11,7 +11,10 @@ function onBuild(err, stats) {
     if (err) {
         console.log('*** Webpack error:', err);
     } else {
-        console.log(stats.toString());
+        console.log(stats.toString({
+            colors: true,
+            chunks: false
+        }));
     }
 }
 

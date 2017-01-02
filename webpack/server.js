@@ -1,3 +1,4 @@
+var path = require('path');
 var fs = require('fs');
 var webpack = require('webpack');
 
@@ -27,11 +28,13 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.jsx', '.js', '.tsx', '.ts'],
+        extensions: ['', '.js', '.ts'],
 
         alias: {
             '__root': process.cwd(),
         },
+
+        root: path.resolve(process.cwd(), "src")
     },
 
     devtool: 'source-map',
@@ -46,7 +49,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 loader: "awesome-typescript-loader"
             },
             {
