@@ -83,11 +83,12 @@ Same as `npm run server`, but through a webpack watcher that rebundles and resta
 ##### Configuration
 This is done with a node script in `scripts/server-watch`.
 
-### `npm run build`
-Bundles and starts the server as in `npm run server`, but uses the production build.
-
 ### `npm run build-client`
-Bundles the client files, but uses the production build.
+Bundles the client files in production mode, and outputs to `build/`.
+
+### `npm run build`
+Bundles both the client and server files in production mode, and outputs to `build/`.
+
 
 
 ## webpack
